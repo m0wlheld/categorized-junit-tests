@@ -41,6 +41,14 @@
           <version>3.8.0</version>
         </plugin>
         <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
           <dependencies>
@@ -54,18 +62,14 @@
             <excludedGroups>org.dahlen.IntegrationTest</excludedGroups>
           </configuration>
         </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
       </plugins>
     </pluginManagement>
   </build>
   <profiles>
+    <!-- 
+      This profile will prevent tests marked by the IntegrationTest interface
+      to be excluded during tests. Activating this profile will enable them.
+    -->
     <profile>
       <id>it</id>
       <build>
