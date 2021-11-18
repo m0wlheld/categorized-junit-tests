@@ -3,7 +3,10 @@
 This sample [Maven](https://maven.apache.org/) project demonstrates how to separate integration tests from unit tests by using a "marking" interface and an appropriate configuration for the [maven-surefire-plugin](https://maven.apache.org/surefire/maven-surefire-plugin/). 
 
 ## How does is work?
+
 JUnit 4 supports using the [@Category](https://junit.org/junit4/javadoc/4.13/org/junit/experimental/categories/Category.html) annotation to mark a test class or a single [@Test](https://junit.org/junit4/javadoc/4.13/org/junit/Test.html) method being a member of a category (or category group). Using a dedicated configuration for the [maven-surefire-plugin](https://maven.apache.org/surefire/maven-surefire-plugin/), you will be able to include and/or exclude defined category groups when running tests.
+
+Categories are of course to qualify the nature of a test and not limited to separate integration tests from unit tests. The original announcement (see [below](#see-also)) mentions more valuable scenarios.
 
 ### Define an interface as category marker
 
@@ -132,5 +135,5 @@ java.lang.AssertionError
 [ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
 ```
 
-## See also:
-* https://github.com/junit-team/junit4/wiki/Categories
+## See also
+* [https://github.com/junit-team/junit4/wiki/Categories]
